@@ -2,22 +2,26 @@ class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
         #O(logn) + O(n^2) = O(n^2)
         #Space could be O(1) or O(n)
-        result = []
         nums.sort()
+        result = []
         
-        for i, a in enumerate(nums):
-            if i >0 and a ==nums[i-1]:
+        for i in range(len(nums)-2):
+            if i > 0 and nums[i] == nums[i-1]:
                 continue
-            l,r = i+1, len(nums)-1
-            while l<r:
-                threeSum = a +nums[l] + nums[r]
-                if threeSum > 0:
-                    r -= 1
-                elif threeSum < 0:
-                    l += 1
+            left = i + 1
+            right = len(nums) -1 
+            while left < right:
+                currSum = nums[i] + nums[left] + nums[right]
+                if currSum > 0:
+                    right -= 1
+                elif currSum < 0:
+                    left += 1
                 else:
-                    result.append([a,nums[l],nums[r]])
-                    l += 1
-                    while nums[l] == nums[l-1] and l<r:
-                        l+= 1
+                    result.append([nums[i],nums[left],nums[right]])
+                    left += 1
+                    while nums[left] == nums[left-1] and left < right:
+                        left +=1
         return result
+                    
+            
+            
