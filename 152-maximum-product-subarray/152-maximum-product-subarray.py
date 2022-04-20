@@ -10,7 +10,11 @@ class Solution:
             currMin = min(tmp, n* currMin, n)
             result = max(result, currMax)
         return result
-            
+        
+        
+        
+        
+        
             
              
         
