@@ -1,6 +1,5 @@
 class Solution:
     def findMin(self, nums: List[int]) -> int:
-        
         result = nums[0]
         leftPointer = 0
         rightPointer = len(nums) - 1
@@ -10,12 +9,15 @@ class Solution:
                 result = min(result,nums[leftPointer])
                 break
             middle = (leftPointer + rightPointer) //2
-            result = min(result,nums[middle])
+            result = min(result, nums[middle])
+            
             if nums[middle] >= nums[leftPointer]:
                 leftPointer = middle + 1
-            else:
+            else: 
                 rightPointer = middle -1
         return result
+        
+    
                 
         
         
