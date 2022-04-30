@@ -6,7 +6,6 @@
 #         self.right = right
 class Solution:    
     def isSubtree(self, root: Optional[TreeNode], subRoot: Optional[TreeNode]) -> bool:
-        #check if subroot is null if it is return True because it can be a sub tree of a node with no children
         if not subRoot:
             return True
         if root is None:
