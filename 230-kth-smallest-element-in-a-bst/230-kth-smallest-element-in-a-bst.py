@@ -7,7 +7,7 @@
 class Solution:
     def kthSmallest(self, root: Optional[TreeNode], k: int) -> int:
         stack = []
-        result = []
+        n = 0
         
         #edge case of no root
         if root is None:
@@ -18,7 +18,8 @@ class Solution:
                 stack.append(root)
                 root = root.left
             root = stack.pop()
-            result.append(root.val)
+            n += 1
+            if n == k:
+                return root.val
             root = root.right
-        return result[k-1]
         
