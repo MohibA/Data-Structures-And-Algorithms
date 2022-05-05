@@ -1,6 +1,5 @@
 class Solution:
     def countComponents(self, n: int, edges: List[List[int]]) -> int:
-        
         count = 0
         
         graph = defaultdict(list)
@@ -9,21 +8,23 @@ class Solution:
             graph[i].append(j)
             graph[j].append(i)
         
-        stack, not_seen = [], set({i for i in range(n)})
-        counter = 0
+        def explore(node):
+            visited.add(node)
         
-        while not_seen:
-            node = not_seen.pop()
-            stack.append(node)
-            counter += 1 
-            while stack:
-                node = stack.pop()
-                for neighbor in graph[node]:
-                    if neighbor in not_seen:
-                        not_seen.remove(neighbor)
-                        stack.append(neighbor)
+            for neighbor in graph[node]:
+                if neighbor not in visited:
+                    explore(neighbor)
         
-        return counter
+        visited = set()
         
+        for i in range(n):
+            if i not in visited:
+                explore(i)
+                count += 1
+        return count
+    
+
+        
+    
         
         
