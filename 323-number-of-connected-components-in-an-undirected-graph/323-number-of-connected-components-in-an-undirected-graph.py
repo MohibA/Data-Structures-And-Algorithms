@@ -1,7 +1,5 @@
 class Solution:
     def countComponents(self, n: int, edges: List[List[int]]) -> int:
-        if n <= 1:
-            return 1
         
         count = 0
         
