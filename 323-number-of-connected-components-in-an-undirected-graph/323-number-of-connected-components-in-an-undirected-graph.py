@@ -1,10 +1,5 @@
 class Solution:
     def countComponents(self, n: int, edges: List[List[int]]) -> int:
-        #Convert edges in to adjacency list
-        # initialize counter variable at 0
-        #Traverse over a node if not visited
-        #incrase count
-        
         if n <= 1:
             return 1
         
@@ -17,7 +12,6 @@ class Solution:
             graph[j].append(i)
         
         stack, not_seen = [], set({i for i in range(n)})
-        print(not_seen)
         counter = 0
         
         while not_seen:
