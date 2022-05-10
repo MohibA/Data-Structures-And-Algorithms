@@ -7,8 +7,7 @@ class Solution:
             currSum += nums[i]
             if currSum < nums[i]:
                 currSum = nums[i]
-            if currSum > maxSum:
-                maxSum = currSum
-        return maxSum   
+            maxSum = max(currSum, maxSum)
+        return maxSum    
         
         
