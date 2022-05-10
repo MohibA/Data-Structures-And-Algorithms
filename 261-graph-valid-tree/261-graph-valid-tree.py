@@ -16,8 +16,7 @@ class Solution:
             for neighbor in graph[node]:
                 if neighbor == prev:
                     continue
-                if neighbor in visited:
-                    return False
+                
                 if not dfs(neighbor,node):
                     return False
             return True
