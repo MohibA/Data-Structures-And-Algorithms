@@ -2,19 +2,17 @@ class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
         if len(s) != len(t):
             return False
-        chars = {}
+        counter = [0] *26
         
-        for i in s:
-            if i in chars:
-                chars[i] += 1
-            else:
-                chars[i] = 1
-        for x in t:
-            if x in chars:
-                chars[x] -= 1
-            else:
-                return False
-        for c in chars:
-            if chars[c] != 0:
+        for char in s:
+            counter[ord(char) - ord('a')] += 1
+        
+        for char in t:
+            counter[ord(char) -ord('a')] -= 1
+        print(counter)
+        for i in counter:
+            if i > 0:
                 return False
         return True
+        
+        
