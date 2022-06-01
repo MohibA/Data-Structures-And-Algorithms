@@ -1,6 +1,5 @@
 class Solution:
     def reverseWords(self, s: str) -> str:
-        #First remove leading and trailing spaces
         left,right = 0, len(s)-1
         
         while left <= right and s[left] == ' ':
