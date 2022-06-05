@@ -21,7 +21,6 @@ class Solution:
             else:
                 root_node = curr_node
                 break      
-        print(root_node.val)
         while root_node:
             if node.val >= root_node.val:
                 root_node = root_node.right
