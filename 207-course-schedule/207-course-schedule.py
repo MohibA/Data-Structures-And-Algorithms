@@ -1,17 +1,17 @@
 class Solution:
-    def explore(self,courseMap,node,visited):
-        if node in visited:
+    def explore(self,courseMap,course,visited):
+        if course in visited:
             return False
-        if courseMap[node] == []:
+        if courseMap[course] == []:
             return True
         
-        visited.add(node)
+        visited.add(course)
         
-        for prereq in courseMap[node]:
+        for prereq in courseMap[course]:
             if not self.explore(courseMap,prereq,visited):
                 return False
-        visited.remove(node)
-        courseMap[node] = []
+        visited.remove(course)
+        courseMap[course] = []
         
         return True
     
