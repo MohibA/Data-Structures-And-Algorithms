@@ -14,20 +14,23 @@ class Solution:
         courseMap[course] = []
         
         return True
-    
+       
     def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
         courseMap = defaultdict(list)
         visited = set()
         
-        for i,j in prerequisites:
-            courseMap[i].append(j)
+        for course,prereq in prerequisites:
+            courseMap[course].append(prereq)
         
         for course in range(numCourses):
             if not self.explore(courseMap,course,visited):
                 return False
-            
         return True
-    
+        
+        
+        
+        
+        
     
             
             
