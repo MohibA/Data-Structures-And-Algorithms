@@ -12,8 +12,7 @@ class Solution:
                 if grid[i][j] == 1:
                     rows[i] += 1
                     col[j] += 1        
-        print(rows)
-        print(col)
+
         #Loop through in size of grid in rows and col again
         for i in range(len(grid)):
             for j in range(len(grid[0])):
