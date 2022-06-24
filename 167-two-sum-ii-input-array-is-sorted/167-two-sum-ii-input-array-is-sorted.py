@@ -4,9 +4,6 @@ class Solution:
         right = len(numbers) - 1
         
         while left < right:
-            if numbers[left] == numbers[left-1]:
-                left += 1
-                continue
             curr_sum = numbers[left] + numbers[right]
             
             if curr_sum == target:
