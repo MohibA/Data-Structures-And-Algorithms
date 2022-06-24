@@ -16,5 +16,3 @@ class Solution:
         
         return len(nums)
                 
-
-[0,2,3,4]
