@@ -15,7 +15,7 @@ class Solution:
 
             route.append(node.val)
             currSum += node.val
-            print(route)
+            #print(route)
             
             if not node.left and not node.right and currSum == targetSum:
                 result.append(route[:])
