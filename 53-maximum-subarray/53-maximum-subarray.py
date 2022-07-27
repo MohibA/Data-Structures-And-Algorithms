@@ -1,13 +1,13 @@
 class Solution:
     def maxSubArray(self, nums: List[int]) -> int:
-        maxSum = nums[0]
+        maxSub = nums[0]
         currSum = 0
         
-        for i in range(len(nums)):
-            currSum += nums[i]
-            if currSum < nums[i]:
-                currSum = nums[i]
-            maxSum = max(currSum, maxSum)
-        return maxSum    
-        
-        
+        for n in nums:
+            if currSum < 0:
+                currSum = 0
+            currSum += n
+            
+            maxSub = max(maxSub, currSum)
+
+        return maxSub
