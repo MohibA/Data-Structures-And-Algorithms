@@ -17,7 +17,6 @@ class Solution:
         curr = head
         up_to = (n//2) - 1
         
-        print("values", values)
         i = 0
         while curr:
             if i > up_to:
