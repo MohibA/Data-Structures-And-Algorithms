@@ -8,7 +8,7 @@ class Solution:
             stoneY = heapq.heappop(maxHeap)
             
             if stoneX != stoneY:
-                newStone = stoneX-stoneY
+                newStone = abs(stoneY) - abs(stoneX)
                 heapq.heappush(maxHeap,newStone)
                 
         maxHeap.append(0)
