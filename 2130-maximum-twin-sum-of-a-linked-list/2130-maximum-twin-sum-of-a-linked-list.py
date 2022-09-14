@@ -15,18 +15,14 @@ class Solution:
             n+= 1
             curr = curr.next
         curr = head
-        up_to = (n//2) - 1
         
-        i = 0
-        while curr:
-            if i > up_to:
-                break
-            twin_node = n - 1 - i
-            max_sum = max(max_sum,curr.val + values[twin_node])
-            i += 1
-            curr = curr.next
+        N = len(values)
+        for i in range(N):
+            max_sum = max(max_sum,values[i] + values[n-i-1])
+        
         return max_sum
-            
+
+#Try a soluton later with slow and fast pointer to reduce space complexity
             
             
         
