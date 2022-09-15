@@ -23,5 +23,5 @@ class Solution:
             
             stack.append(result)
 
-        return stack.pop()
+        return stack.pop() if len(stack) == 1 else None
         
