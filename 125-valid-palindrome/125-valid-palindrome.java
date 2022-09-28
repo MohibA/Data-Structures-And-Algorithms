@@ -2,8 +2,7 @@ class Solution {
     public boolean isPalindrome(String s) {
         
         int left = 0;
-        int lenOfS = s.length();
-        int right = lenOfS-1;
+        int right = s.length() -1;
         
         s = s.toLowerCase();
         
