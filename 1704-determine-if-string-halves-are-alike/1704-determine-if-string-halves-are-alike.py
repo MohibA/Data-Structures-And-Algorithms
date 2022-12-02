@@ -1,20 +1,22 @@
 class Solution:
     def halvesAreAlike(self, s: str) -> bool:
-        lenOfString = len(s)
+        leftPointer = 0
+        rightPointer = len(s)-1
         vowels = {'a','e','i','o','u','A','E','I','O','U'}
         
         vowelCount = 0
         
-        a = s[0:lenOfString//2]
-        b = s[lenOfString//2:]
-        
-        for char in a:
-            if char in vowels:
-                vowelCount +=1
-        for char in b:
-            if char in vowels:
+        for i in range(len(s)//2):
+            if s[leftPointer] in vowels:
+                vowelCount += 1
+            if s[rightPointer] in vowels:
                 vowelCount -=1
+            leftPointer +=1
+            rightPointer -=1
+        
         return vowelCount == 0
+        
+        
         
         
 
