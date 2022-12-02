@@ -1,7 +1,7 @@
 class Solution:
     def halvesAreAlike(self, s: str) -> bool:
         lenOfString = len(s)
-        vowels = ('a','e','i','o','u','A','E','I','O','U')
+        vowels = {'a','e','i','o','u','A','E','I','O','U'}
         
         vowelCount = 0
         
